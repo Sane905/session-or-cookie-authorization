@@ -11,9 +11,11 @@
 		"lint": "next lint",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"gen:component": "hygen component new"
+		"gen:component": "hygen component new",
+		"codegen": "graphql-codegen --config .graphqlrc.yaml"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.7.13",
 		"@chakra-ui/icons": "^2.0.17",
 		"@chakra-ui/react": "^2.5.1",
 		"@emotion/react": "^11.10.6",
@@ -25,16 +27,24 @@
 		"@types/react-dom": "18.0.11",
 		"firebase": "^9.18.0",
 		"framer-motion": "^9.0.4",
+		"graphql": "^16.6.0",
 		"next": "13.1.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.43.7",
 		"rome": "^12.0.0",
-		"swr": "^2.1.2",
 		"typescript": "4.9.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.0",
+		"@graphql-codegen/cli": "3.3.1",
+		"@graphql-codegen/client-preset": "3.0.1",
+		"@graphql-codegen/introspection": "3.0.1",
+		"@graphql-codegen/near-operation-file-preset": "^2.5.0",
+		"@graphql-codegen/typescript": "^3.0.4",
+		"@graphql-codegen/typescript-operations": "^3.0.4",
+		"@graphql-codegen/typescript-react-apollo": "^3.3.7",
+		"@graphql-codegen/typescript-resolvers": "^3.2.1",
 		"@storybook/addon-actions": "^6.5.16",
 		"@storybook/addon-essentials": "^6.5.16",
 		"@storybook/addon-interactions": "^6.5.16",

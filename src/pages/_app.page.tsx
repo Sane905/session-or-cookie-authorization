@@ -1,12 +1,31 @@
 import '@/styles/globals.css';
+import {
+	ApolloClient,
+	ApolloProvider,
+	createHttpLink,
+	InMemoryCache,
+} from '@apollo/client';
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 
 const App = ({ Component, pageProps }: AppProps) => {
+	const link = createHttpLink({
+		uri: 'http://localhost:3001/graphql',
+		credentials: 'include',
+		fetchOptions: { credentials: 'include' },
+	});
+
+	const client = new ApolloClient({
+		cache: new InMemoryCache(),
+		link,
+	});
+
 	return (
-		<ChakraProvider>
-			<Component {...pageProps} />
-		</ChakraProvider>
+		<ApolloProvider client={client}>
+			<ChakraProvider>
+				<Component {...pageProps} />
+			</ChakraProvider>
+		</ApolloProvider>
 	);
 };
 
