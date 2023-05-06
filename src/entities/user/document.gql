@@ -1,0 +1,10 @@
+query FetchCurrentUser {
+  user {
+    ...UserUnit
+  }
+}
+
+fragment UserUnit on User {
+    uid
+    email
+}
