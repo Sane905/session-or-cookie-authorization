@@ -16,6 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 	});
 
 	const client = new ApolloClient({
+		ssrMode: typeof window === 'undefined',
 		cache: new InMemoryCache(),
 		link,
 	});
